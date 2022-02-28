@@ -8,9 +8,14 @@ function compute(){
     var principalvalue = document.getElementById("principal").value;
     if(principalvalue==""){
     alert("Please Enter a Principal Value");
-    focus.principalvalue;
+    document.getElementById("principal").focus();
+    }
+    else if(principalvalue<1){
+        alert("Please Enter a valid Principal Value");
+        document.getElementById("principal").focus();
     }
     else {
+
         var amount = parseInt(document.getElementById("principal").value);
         var rate = document.getElementById("rate").value;
         var time = parseInt(document.getElementById("mySelect").value);
@@ -24,7 +29,7 @@ function compute(){
         "at an interest rate of <mark>" + rate + "</mark>,<br/>" +
         "You will receive an amount of <mark>" + total + "</mark>,<br/> " +
         "in the year <mark>" + yearInTheFuture + "</mark>";
-    } 
+    }
 }
 
 //Check for positive values
